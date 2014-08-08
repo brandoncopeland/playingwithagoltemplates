@@ -1,0 +1,29 @@
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+*~
+*.sass-cache
+*.bundle
+*.grunt
+
+# os and folder stuff
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-workspace
+
+# Folders to ignore
+node_modules
+dist
