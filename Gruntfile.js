@@ -11,9 +11,9 @@ module.exports = function (grunt) {
       }
     },
     copy: {
-      index: {
+      statics: {
         files: [{
-          src: [ 'index.html' ],
+          src: ['index.html', 'js/*', 'img/*'],
           dest: 'dist/'
         }]
       }
@@ -41,6 +41,9 @@ module.exports = function (grunt) {
         dest: 'dist/build.txt',
         content: '<%= user %>\n<%= now %>\n<%= pkg.name %> (<%= pkg.repository.url %>) - <%= gitinfo.local.branch.current.shortSHA %>\n<%= dir %>'
       }
+    },
+    zip: {
+      'dist/<%= pkg.name %>.zip': ['dist']
     }
   });
 
@@ -52,9 +55,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-gitinfo');
+  grunt.loadNpmTasks('grunt-zip');
 
-  grunt.registerTask('dev', ['clean', 'copy:index', 'sass:dev', 'gitinfo', 'writefile:build']); // Production build
-  grunt.registerTask('prod', ['clean', 'copy:index', 'sass:prod', 'gitinfo', 'writefile:build']); // Production build
+  grunt.registerTask('dev', ['clean', 'copy:statics', 'sass:dev', 'gitinfo', 'writefile:build']); // Production build
+  grunt.registerTask('prod', ['clean', 'copy:statics', 'sass:prod', 'gitinfo', 'writefile:build', 'zip']); // Production build
 
   grunt.registerTask('default', ['prod']);
 };

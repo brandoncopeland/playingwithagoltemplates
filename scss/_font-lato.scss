@@ -1,0 +1,11 @@
+// _lato.scss
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+@mixin Lato() {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body, button, input, select, textarea {
+	@include Lato;
+	font-size: 13px;
+}

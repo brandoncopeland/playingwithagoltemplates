@@ -1,0 +1,41 @@
+// _signin.scss
+
+@import "commonmixins";
+
+.dijitDialogUnderlayWrapper {
+	@include retinabackground('../img/debut_dark', 'png', 200px, 200px);
+	@include opacity(0.9);
+}
+.esriSignInDialog {
+	padding: 20px;
+	@include mapoverlay;
+	.dijitDialogTitleBar {
+		display: none;
+	}
+	.dijitDialogPaneContent {
+		.dijitDialogPaneContentArea > div {
+			display: none;
+		}
+		.dijitValidationContainer {
+			display: none;
+		}
+		input[type="text"], input[type="password"] {
+			width: 100%;
+			margin: 6px 0 10px;
+			padding: 6px;
+			border: solid 1px #999;
+			border-radius: 2px;
+			box-shadow: 0 0 6px #ddd inset;
+		}
+		.esriErrorMsg {
+			margin-bottom: 15px;
+			color: rgb(212, 100, 100) !important;
+			text-align: left !important;
+			padding: 0 !important;
+			background-color: transparent !important;
+		}
+	}
+	.dijitDialogPaneActionBar {
+		display: none;
+	}
+}

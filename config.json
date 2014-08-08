@@ -1,0 +1,10 @@
+{
+	"configurationSettings": [{
+		"category": "General Settings",
+		"fields": [{
+			"type": "string",
+			"fieldName": "title",
+			"label": "Title"
+		}]
+	}]
+}
